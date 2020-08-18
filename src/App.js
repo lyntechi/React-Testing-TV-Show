@@ -9,12 +9,14 @@ import Episodes from "./components/Episodes";
 import { fetchShow } from "./api/fetchShow.js";
 import "./styles.css";
 
+
+
 export default function App() {
   const [show, setShow] = useState(null);
   const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState("");
   const episodes = seasons[selectedSeason] || [];
- console.log('show',show)
+
   useEffect(() => {
       fetchShow()
         .then((res) => {

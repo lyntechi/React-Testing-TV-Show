@@ -84,12 +84,12 @@ test("renders episodes when data fetch finishes", () => {
   const { rerender } = render(<Episodes episodes={[]} />);
 
   let episodesArray = screen.queryAllByTestId(/episodes/i);
-  console.log('first',episodesArray)
+
   expect(episodesArray).toHaveLength(0);
  
   rerender(<Episodes episodes={episodesData} />);
   episodesArray = screen.getAllByTestId(/episodes/i);
-  console.log('second',episodesArray)
+
 
   expect(episodesArray).toHaveLength(3);
 });
